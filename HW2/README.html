@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>АВС - Домашнее задание №2</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Арыслан Якшибаев, группа БПИ196" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">АВС - Домашнее задание №2</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org97758ab">Условие</a></li>
+<li><a href="#org2d39447">Код основной программы</a></li>
+<li><a href="#orge16f4ae">Сборка (Linux x64)</a></li>
+<li><a href="#org475693b">Запуск</a></li>
+<li><a href="#orga4defd0">Примеры работы</a>
+<ul>
+<li><a href="#org9a01ba1">Обычное использование</a></li>
+<li><a href="#org8fa2934">Пустой массив</a></li>
+<li><a href="#orgc1a1bc0">Один элемент в массиве</a></li>
+<li><a href="#orgb9da69f">Негативное количество элементов</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org97758ab" class="outline-2">
+<h2 id="org97758ab">Условие</h2>
+<div class="outline-text-2" id="text-org97758ab">
+<blockquote>
+<p>
+Разработать программу, которая вводит одномерный массив <code>A[N]</code>,
+формирует из элементов массива <code>A</code> новый массив <code>B</code> по правилам,
+указанным в таблице, и выводит его.
+</p>
+
+<p>
+Вариант: 8
+Массив <code>B</code> из&#x2026; элементов <code>A</code> в обратном порядке
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org2d39447" class="outline-2">
+<h2 id="org2d39447">Код основной программы</h2>
+<div class="outline-text-2" id="text-org2d39447">
+<div class="org-src-container">
+<pre class="src src-asm">    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#1040;&#1088;&#1099;&#1089;&#1083;&#1072;&#1085; &#1071;&#1082;&#1096;&#1080;&#1073;&#1072;&#1077;&#1074;, &#1075;&#1088;&#1091;&#1087;&#1087;&#1072; &#1041;&#1055;&#1048;196.</span>
+    <span style="color: #5B6268;">;;</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#1056;&#1072;&#1079;&#1088;&#1072;&#1073;&#1086;&#1090;&#1072;&#1090;&#1100; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1084;&#1091;, &#1082;&#1086;&#1090;&#1086;&#1088;&#1072;&#1103; &#1074;&#1074;&#1086;&#1076;&#1080;&#1090; &#1086;&#1076;&#1085;&#1086;&#1084;&#1077;&#1088;&#1085;&#1099;&#1081; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074; A[N],</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#1092;&#1086;&#1088;&#1084;&#1080;&#1088;&#1091;&#1077;&#1090; &#1080;&#1079; &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1086;&#1074; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074;&#1072; A &#1085;&#1086;&#1074;&#1099;&#1081; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074; B &#1087;&#1086; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1072;&#1084;,</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#1091;&#1082;&#1072;&#1079;&#1072;&#1085;&#1085;&#1099;&#1084; &#1074; &#1090;&#1072;&#1073;&#1083;&#1080;&#1094;&#1077;, &#1080; &#1074;&#1099;&#1074;&#1086;&#1076;&#1080;&#1090; &#1077;&#1075;&#1086;.</span>
+    <span style="color: #5B6268;">;;</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#1042;&#1072;&#1088;&#1080;&#1072;&#1085;&#1090;: 8</span>
+    <span style="color: #5B6268;">;;</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">&#1052;&#1072;&#1089;&#1089;&#1080;&#1074; B &#1080;&#1079;... &#1101;&#1083;&#1077;&#1084;&#1077;&#1085;&#1090;&#1086;&#1074; A &#1074; &#1086;&#1073;&#1088;&#1072;&#1090;&#1085;&#1086;&#1084; &#1087;&#1086;&#1088;&#1103;&#1076;&#1082;&#1077;</span>
+    <span style="color: #5B6268;">;;</span>
+
+<span style="color: #c678dd;">%include</span> <span style="color: #98be65;">"util.asm"</span>
+
+    <span style="color: #51afef;">SECTION</span> .data
+
+    <span style="color: #51afef;">initPrompt</span>          db  <span style="color: #98be65;">"&#1042;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1076;&#1083;&#1080;&#1085;&#1091; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074;&#1072;"</span>, 0h
+    <span style="color: #51afef;">arrayPrompt</span>         db  <span style="color: #98be65;">"&#1042;&#1074;&#1077;&#1076;&#1080;&#1090;&#1077; &#1095;&#1080;&#1089;&#1083;&#1072; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074;&#1072;"</span>, 0h
+    <span style="color: #51afef;">inputMsg</span>            db  <span style="color: #98be65;">"&gt;&gt; "</span>, 0h
+    <span style="color: #51afef;">outputMsg</span>           db  <span style="color: #98be65;">"&lt;&lt; "</span>, 0h
+    <span style="color: #51afef;">space</span>               db  <span style="color: #98be65;">" "</span>, 0h
+    <span style="color: #51afef;">firstArrayString</span>    db  <span style="color: #98be65;">"&#1042;&#1074;&#1077;&#1076;&#1105;&#1085;&#1085;&#1099;&#1081; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074;: "</span>, 0h
+    <span style="color: #51afef;">newArrayString</span>      db  <span style="color: #98be65;">"&#1053;&#1086;&#1074;&#1099;&#1081; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074;:     "</span>, 0h
+    <span style="color: #51afef;">zeroMsg</span>             db  <span style="color: #98be65;">"&#1055;&#1091;&#1089;&#1090;&#1086;&#1081; &#1084;&#1072;&#1089;&#1089;&#1080;&#1074;, &#1085;&#1077;&#1095;&#1077;&#1075;&#1086; &#1076;&#1077;&#1083;&#1072;&#1090;&#1100;. "</span>, 0h
+
+    <span style="color: #51afef;">SECTION</span> .bss
+
+    <span style="color: #51afef;">sinput</span>              resb    <span style="color: #da8548; font-weight: bold;">255</span>         <span style="color: #5B6268;">; </span><span style="color: #5B6268;">reserve space for 255 bytes</span>
+    <span style="color: #51afef;">array</span>               resb    <span style="color: #da8548; font-weight: bold;">255</span>         <span style="color: #5B6268;">; </span><span style="color: #5B6268;">reserve space for 255 bytes</span>
+    <span style="color: #51afef;">newArray</span>            resb    <span style="color: #da8548; font-weight: bold;">255</span>         <span style="color: #5B6268;">; </span><span style="color: #5B6268;">reserve space for 255 bytes</span>
+
+    <span style="color: #51afef;">SECTION</span> .text
+
+    <span style="color: #51afef;">global</span> _start
+
+<span style="color: #c678dd;">_start</span>:
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Prompt for N</span>
+    <span style="color: #51afef;">mov</span> eax, initPrompt
+    <span style="color: #51afef;">call</span> sprintLF
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Read the number N</span>
+    <span style="color: #51afef;">call</span> readInt
+    <span style="color: #51afef;">push</span> eax
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">if N == 0, quit</span>
+    <span style="color: #51afef;">cmp</span> eax, <span style="color: #da8548; font-weight: bold;">0</span>
+    <span style="color: #51afef;">jle</span> gotZero
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">mov eax, outputMsg</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">call sprint_err</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">mov eax, [arrayLen]</span>
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">call iprintLF_err</span>
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Prompt for array</span>
+    <span style="color: #51afef;">mov</span> eax, arrayPrompt
+    <span style="color: #51afef;">call</span> sprintLF
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Read the array from STDIN</span>
+    <span style="color: #51afef;">pop</span> eax
+    <span style="color: #51afef;">push</span> eax
+    <span style="color: #51afef;">mov</span> ebx, array
+    <span style="color: #51afef;">call</span> readIntArray
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Copy array to newArray</span>
+    <span style="color: #51afef;">mov</span> eax, array
+    <span style="color: #51afef;">mov</span> ebx, newArray
+    <span style="color: #51afef;">pop</span> ecx
+    <span style="color: #51afef;">push</span> ecx
+    <span style="color: #51afef;">call</span> copyArray
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Reverse newArray</span>
+    <span style="color: #51afef;">mov</span> ebx, newArray
+    <span style="color: #51afef;">call</span> reverseArray
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Print decorative text</span>
+    <span style="color: #51afef;">mov</span> eax, firstArrayString
+    <span style="color: #51afef;">call</span> sprint
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">print initial array</span>
+    <span style="color: #51afef;">mov</span> ebx, array
+    <span style="color: #51afef;">pop</span> eax
+    <span style="color: #51afef;">push</span> eax
+    <span style="color: #51afef;">call</span> printIntArray
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Decorative text</span>
+    <span style="color: #51afef;">mov</span> eax, newArrayString
+    <span style="color: #51afef;">call</span> sprint
+
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Print new, reversed array</span>
+    <span style="color: #51afef;">mov</span> ebx, newArray
+    <span style="color: #51afef;">pop</span> eax
+    <span style="color: #51afef;">call</span> printIntArray
+
+<span style="color: #c678dd;">finishProgram</span>:
+    <span style="color: #51afef;">call</span> quit
+
+<span style="color: #c678dd;">gotZero</span>:
+    <span style="color: #5B6268;">;; </span><span style="color: #5B6268;">Display "0 elements, nothing to do"</span>
+    <span style="color: #51afef;">mov</span> eax, zeroMsg
+    <span style="color: #51afef;">call</span> sprintLF
+    <span style="color: #51afef;">jmp</span> finishProgram
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge16f4ae" class="outline-2">
+<h2 id="orge16f4ae">Сборка (Linux x64)</h2>
+<div class="outline-text-2" id="text-orge16f4ae">
+<div class="org-src-container">
+<pre class="src src-bash">nasm -f elf main.asm
+ld -m elf_i386 main.o -o main
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org475693b" class="outline-2">
+<h2 id="org475693b">Запуск</h2>
+<div class="outline-text-2" id="text-org475693b">
+<div class="org-src-container">
+<pre class="src src-bash">./main
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga4defd0" class="outline-2">
+<h2 id="orga4defd0">Примеры работы</h2>
+<div class="outline-text-2" id="text-orga4defd0">
+</div>
+<div id="outline-container-org9a01ba1" class="outline-3">
+<h3 id="org9a01ba1">Обычное использование</h3>
+<div class="outline-text-3" id="text-org9a01ba1">
+<pre class="example" id="org288bb02">
+❯ ./main
+Введите длину массива
+&gt;&gt; 5
+Введите числа массива
+&gt;&gt; 1
+&gt;&gt; 2
+&gt;&gt; 3
+&gt;&gt; 4
+&gt;&gt; 5
+Введённый массив: 1 2 3 4 5
+Новый массив:     5 4 3 2 1
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8fa2934" class="outline-3">
+<h3 id="org8fa2934">Пустой массив</h3>
+<div class="outline-text-3" id="text-org8fa2934">
+<pre class="example" id="org0b48fe3">
+❯ ./main
+Введите длину массива
+&gt;&gt; 0
+Пустой массив, нечего делать.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc1a1bc0" class="outline-3">
+<h3 id="orgc1a1bc0">Один элемент в массиве</h3>
+<div class="outline-text-3" id="text-orgc1a1bc0">
+<pre class="example" id="orge28bdb3">
+❯ ./main
+Введите длину массива
+&gt;&gt; 1
+Введите числа массива
+&gt;&gt; 5
+Введённый массив: 5
+Новый массив:     5
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgb9da69f" class="outline-3">
+<h3 id="orgb9da69f">Негативное количество элементов</h3>
+<div class="outline-text-3" id="text-orgb9da69f">
+<pre class="example" id="org279dd49">
+❯ ./main
+Введите длину массива
+&gt;&gt; -1
+Пустой массив, нечего делать.
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2020-10-08 Thu 21:14</p>
+<p class="author">Author: Арыслан Якшибаев, группа БПИ196</p>
+<p class="email">Email: <a href="mailto:aayakshibaev@edu.hse.ru">aayakshibaev@edu.hse.ru</a></p>
+</div>
+</body>
+</html>

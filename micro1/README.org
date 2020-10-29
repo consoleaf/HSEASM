@@ -1,0 +1,39 @@
+#+TITLE: Архитектура Вычислительных Систем \\
+#+TITLE: Микропроект №1
+#+AUTHOR: Якшибаев Арыслан Азаматович, БПИ196 \\
+#+AUTHOR: НИУ ВШЭ, ФКН ПИ
+#+EMAIL: aayakshibaev@edu.hse.ru
+#+LATEX_HEADER: \usepackage[toc,page]{appendix}
+#+LATEX_CLASS: hseArticle
+
+[[./README.pdf][TEST]]
+
+* Текст задания
+Разработать программу, которая определяет
+максимальное значение параметра числа линейной
+рекуррентной последовательности
+$f_{n} = f_{n+2} - f_{n+1}$ при $n \leq -2$ ("числа Фибоначчи")
+со стартовой последовательностью =[0,1]= в
+отрицательной области значений, не выходящее
+за пределы целого со знаком $= 10^9$
+
+* Сборка и запуск
+** Компиляция и сборка
+#+BEGIN_SRC bash
+nasm -f elf64 main.asm
+gcc -no-pie -nostartfiles main.o -o main
+#+END_SRC
+** Запуск
+#+BEGIN_SRC bash :exports both
+./main
+#+END_SRC
+
+#+RESULTS:
+: Found f(-45) = -701408733.
+
+\newpage
+* Приложение
+** Исходный код
+#+INCLUDE: "main.asm" src asm
+** Тестовый пример
+[[./screenshot.png]]
