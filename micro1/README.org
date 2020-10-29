@@ -6,7 +6,7 @@
 #+LATEX_HEADER: \usepackage[toc,page]{appendix}
 #+LATEX_CLASS: hseArticle
 
-[[./README.pdf][TEST]]
+[[./README.pdf][PDF версия]]
 
 * Текст задания
 Разработать программу, которая определяет
@@ -34,6 +34,7 @@ gcc -no-pie -nostartfiles main.o -o main
 \newpage
 * Приложение
 ** Исходный код
+[[file:main.asm][main.asm]]
 #+INCLUDE: "main.asm" src asm
 ** Тестовый пример
 [[./screenshot.png]]
