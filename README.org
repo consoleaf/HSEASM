@@ -4,3 +4,4 @@
 + [[file:micro1/][Микропроект 1]]
 + [[file:HW3/README.org][Домашнее задание 3]]
 + [[file:HW4/README.org][Домашнее задание 4]]
++ [[file:micro2/README.org][Микропроект 2]]
