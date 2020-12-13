@@ -6,3 +6,8 @@ tmp/
 .auctex-auto
 *.tex
 _minted*
+CMakeFiles
+*/CMakeFiles
+CMakeCache.txt
+Makefile
+cmake_install.cmake
