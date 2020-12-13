@@ -1,0 +1,83 @@
+#+TITLE: Микропроект 2 \\
+#+TITLE: Многопоточное программирование. Взаимодействие потоков.
+#+AUTHOR: Арыслан Якшибаев, БПИ196
+#+SUBTITLE: Вариант 30
+#+LATEX_CLASS: hseArticle
+
+* [[file:README.pdf][Отчёт.pdf]] :noexport:
+
+* Задание
+/Задача о читателях и писателях-2 («грязное чтение»)./
+
+Базу данных
+разделяют два типа потоков – читатели и писатели. Читатели выполняют
+транзакции, которые просматривают записи базы данных, транзакции
+писателей и просматривают и изменяют записи. Предполагается, что в
+начале БД находится в непротиворечивом состоянии (т.е. отношения между
+данными имеют смысл). Транзакции выполняются в режиме «грязного
+чтения», то есть процесс-писатель не может получить доступ к БД только в
+том случае, если ее занял другой процесс-писатель, а процессы-читатели ему
+не мешают. Создать многопоточное приложение с потоками-писателями и
+потоками-читателями. Реализовать решение, используя семафоры, и не
+используя блокировки чтения-записи.
+
+* Сборка и выполнение
+** Сборка
+#+name: build
+#+begin_src bash :results output verbatim :exports both
+cmake .
+make -k Micro2
+#+end_src
+
+/Пример результата выполнения сборки/
+#+RESULTS: build
+: -- Configuring done
+: -- Generating done
+: -- Build files have been written to: /home/gulp/ASM/repo/micro2
+: [100%] Built target Micro2
+
+** Запуск
+#+begin_example bash
+./Micro2
+#+end_example
+
+*** Примеры запуска
+#+name: execute1
+#+begin_src bash :results output verbatim :exports both
+./Micro2
+#+end_src
+
+/Вывод/
+#+RESULTS: execute1
+#+begin_example
+[TIME: 0] ==> Program started
+[TIME: 1] ==>  Database initialized
+[TIME: 2] ==>  Locked for writing
+[TIME: 3] ==>  Started writeValue(4, 5)
+[TIME: 4] ==>  Setting 4 to 5
+[TIME: 5] ==>  Unlocked for writing
+[TIME: 6] ==>  Locked for writing
+[TIME: 7] ==>  Started writeValue(1, 2)
+[TIME: 8] ==>  Setting 1 to 2
+[TIME: 9] ==>  Unlocked for writing
+[TIME: 10] ==>  Locked for writing
+[TIME: 11] ==>  Started writeValue(2, 3)
+[TIME: 12] ==>  Setting 2 to 3
+[TIME: 13] ==>  Unlocked for writing
+[TIME: 14] ==>  Locked for writing
+[TIME: 15] ==>  Started writeValue(3, 4)
+[TIME: 16] ==>  Setting 3 to 4
+[TIME: 17] ==>  Unlocked for writing
+[TIME: 18] ==>  Started readValue(2)
+[TIME: 19] ==>  Got value: 2 -> 3
+[TIME: 20] ==>  Started readValue(1)
+[TIME: 21] ==>  Got value: 1 -> 2
+[TIME: 22] ==>  Started readValue(3)
+[TIME: 23] ==>  Got value: 3 -> 4
+[TIME: 24] ==>  Started readValue(4)
+[TIME: 25] ==>  Got value: 4 -> 5
+[TIME: 26] ==>  Database destructed
+#+end_example
+
+*** Скриншоты
+[[file:Screenshots/Screenshot1.png]]
